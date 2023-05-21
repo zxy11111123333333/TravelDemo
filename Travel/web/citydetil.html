@@ -1,0 +1,173 @@
+<!--引入thymeleaf包-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/citydetail.css">
+    <link rel="stylesheet" href="css/top_bottom.css">
+    <script th:src="@{js/travel.js}" type="text/javascript"></script>
+</head>
+<body>
+    <div class="navigation">
+        <h1>
+            Hello<br>
+            welcome to <div th:text="${cname}"></div>
+          </h1>
+    </div>
+    <!-- 虚线 -->
+    <div class="borderbotm"></div>
+
+    <div class="navigation2">
+        <h1>
+            美食推荐<br>
+          </h1>
+    </div>
+
+    <div>
+        <table class="allfood">
+            <div class="buttom" style="margin-left: 100px">
+                <a th:href="@{/addFood.html(cname=${cname})}" style="color: #ff8181">添加美食</a>
+            </div>
+
+            <tr th:each="food : ${foodList}">
+                <td>
+                        <div class="myfood">
+                          <div>
+                              <a th:href="@{/editFood(fname=${food.getFname()})}" style="font-size: 25px;" th:text="${food.getFname()}"></a>
+                          </div>
+                          <div class="borderbotm"></div>
+                          <p style="margin-top: 10px;" th:text="${food.getFin()}"></p>
+                          <img th:src="@{(${food.getFimg()})}" style="margin:30px 10px 0;width: 400px;height: 300px;">
+                          <img src="img/no.png" th:onclick="|delfood(${food.getFno()})|" />
+                            <a style="margin-top: 30px">推荐人:</a>
+                            <a style="margin-top: 30px" th:text="${food.Uname}"></a>
+
+                        </div>
+
+
+                </td>
+            </tr>
+
+            
+        </table>
+
+    </div>
+
+
+    <!-- 虚线 -->
+    <div class="borderbotm"></div>
+
+    <div class="navigation2">
+        <h1>
+            景点推荐<br>
+          </h1>
+    </div>
+
+    <div>
+        <table class="allfood">
+            <div class="buttom" style="margin-left: 100px">
+                <a th:href="@{/addLon.html(cname=${cname})}" style="color: #ff8181">添加景点</a>
+            </div>
+            <tr th:each="lon : ${lonList}">
+                <td>
+                        <div class="myfood">
+                            <div>
+                                <a th:href="@{/editLon(lname=${lon.getLname()})}" style="font-size: 25px;" th:text="${lon.getLname()}"></a>
+                            </div>
+                          <div class="borderbotm"></div>
+                          <p style="margin-top: 10px;" th:text="${lon.getLin()}"></p>
+                          <img style="margin:30px 10px 0;width: 400px;height: 300px;" th:src="@{(${lon.getLimg()})}">
+                            <img src="img/no.png" th:onclick="|dellon(${lon.getLno()})|" />
+                        </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 虚线 -->
+    <div class="borderbotm"></div>
+    <div class="navigation2">
+        <h1>
+            酒店推荐<br>
+          </h1>
+    </div>
+
+    <div>
+        <table class="allfood">
+            <div class="buttom" style="margin-left: 100px">
+                <a th:href="@{/addHotel.html(cname=${cname})}" style="color: #ff8181">添加酒店</a>
+            </div>
+
+            <tr th:each="hotel : ${hotelList}">
+                <td>
+                        <div class="myfood">
+
+                            <div>
+                                <a th:href="@{/editHotel(hname=${hotel.getHname()})}" style="font-size: 25px;" th:text="${hotel.getHname()}"></a>
+                            </div>
+                          <div class="borderbotm"></div>
+                            <p style="margin-top: 10px;" th:text="${hotel.getHin()}"></p>
+                            <img style="margin:30px 10px 0;width: 400px;height: 300px;" th:src="@{(${hotel.getHimg()})}">
+                            <img src="img/no.png" th:onclick="|delhotel(${hotel.getHno()})|" />
+                        </div>
+
+                </td>
+            </tr>
+
+            
+        </table>
+
+    </div>
+
+    <!-- 虚线 -->
+    <div class="borderbotm"></div>
+
+    <div class="navigation2">
+        <h1>
+            城市车站<br>
+          </h1>
+    </div>
+
+    <div>
+        <table class="alltran">
+            <div class="buttom" style="margin-left: 100px">
+                <a th:href="@{/addTran.html(cname=${cname})}" style="color: #ff8181">添加车站</a>
+            </div>
+
+            <tr th:each="tran : ${tranList}" style="width: 300px;height: 200px">
+                <td>
+                        <div class="mytran">
+                          <div>
+                              <p style="font-size: 25px;" th:text="${tran.getTname()}"></p>
+                              <img src="img/no.png" th:onclick="|deltran(${tran.getTno()})|" />
+                          </div>
+                        </div>
+
+                </td>
+
+
+            </tr>
+
+            
+        </table>
+
+    </div>
+    
+
+    <footer>
+      <div class="introduceL">
+        <p class="intL1">站名：旅游攻略网站</p>
+        <p class="intL2">制作人：zxy</p>
+        <p class="intL3">联系电话:111111111</p>
+      </div>
+      <div class="introduceR">
+        <p class="intR1"><a href="first.html">城市介绍</a></p>
+        <p class="intR1"><a href="findcity.html">城市推荐</a></p>
+        <p class="intR1"><a href="totalcity.html">全部城市</a></p>
+       </div>
+    </footer>
+    
+</body>
+</html>

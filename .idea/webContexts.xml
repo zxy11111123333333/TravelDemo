@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Travel/web/citydetil.html" value="file://$PROJECT_DIR$/Travel/web" />
+        <entry key="file://$PROJECT_DIR$/Travel/web/findcity.html" value="file://$PROJECT_DIR$/Travel/web" />
+        <entry key="file://$PROJECT_DIR$/Travel/web/page/findcity.html" value="file://$PROJECT_DIR$/Travel/web/page" />
+        <entry key="file://$PROJECT_DIR$/Travel/web/page/first.html" value="file://$PROJECT_DIR$/Travel/web/page" />
+        <entry key="file://$PROJECT_DIR$/Travel/web/totalcity.html" value="file://$PROJECT_DIR$/Travel/web" />
+      </map>
+    </option>
+  </component>
+</project>

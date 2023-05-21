@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离-->
+<mapper namespace="com.zxy.mapper.FoodMapper">
+
+
+
+
+    <select id="getAllFood" parameterType="java.lang.String" resultType="com.zxy.entity.CityFood">
+        select A.Cname,A.Fin,A.Fimg,A.Fname,B.Uname,A.Uno
+        from city_food A
+        left join user B on  A.Uno=B.Uno
+        where A.Cname=#{Cname}
+    </select>
+
+    <select id="insertFood" parameterType="com.zxy.entity.CityFood">
+        insert into city_food(Cname,Fname,Fin,Fimg,Uno) values (#{Cname},#{Fname},#{Fin},#{Fimg},#{uno})
+    </select>
+
+    <select id="getFoodByFname" parameterType="java.lang.String" resultType="com.zxy.entity.CityFood">
+        SELECT * FROM city_food WHERE Fname = #{Fname}
+    </select>
+
+    <update id="updateFood" parameterType="com.zxy.entity.CityFood">
+        update city_food set Cname=#{Cname},Fin=#{Fin},Fimg=#{Fimg} where Fname=#{Fname}
+    </update>
+
+    <delete id="deleteFood" parameterType="java.lang.String">
+        delete from city_food where Fno = #{Fno}
+    </delete>
+
+    <select id="getCname" parameterType="java.lang.Integer" resultType="com.zxy.entity.CityFood">
+        SELECT * FROM city_food WHERE Fno = #{Fno}
+    </select>
+
+
+</mapper>

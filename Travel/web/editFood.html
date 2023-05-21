@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/add.css">
+</head>
+<body>
+
+
+<div id="div_container">
+    <div id="div_city_list">
+        <p class="center f30">修改信息</p>
+
+        <form action="/editf" method="post">
+            <table class="mycity" th:object="${food}">
+                <input style="margin-right: 200px;" type="text"  th:value="${food.getCname()}" name="cname" hidden="true"/>
+                <tr>
+                    <th>美食名称：</th>
+                    <td><input style="margin-right: 200px;" th:value="${food.getFname()}" type="text" name="fname" readonly unselectable="on"  /></td>
+                </tr>
+                <tr>
+                    <th>美食简介：</th>
+                    <td><input style="margin-right: 200px;" type="text" th:value="${food.getFin()}" name="fin" /></td>
+                </tr>
+                <tr>
+                    <th>美食图片：</th>
+                    <td><input style="margin-right: 200px;" type="text" th:value="${food.getFimg()}" name="fimg" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="margin-left: 120px" class="btn" type="submit" value="修改" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

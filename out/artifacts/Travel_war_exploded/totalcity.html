@@ -1,0 +1,90 @@
+<!--引入thymeleaf包-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/top_bottom.css">
+    <link rel="stylesheet" href="./css/totalcity.css">
+    <script th:src="@{js/travel.js}" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-header">
+        <p class="navbar-brand font-special"> 旅游胜地</p>
+        <p class="navbar-brandE font-special"> LV YOU SHENG DI</p>
+        </div>
+        <ul>
+        <li><a href="first.html">城市介绍</a></li>
+        <li><a href="findcity.html">城市推荐</a></li>
+        <li class="active"><a href="totalcity.html">全部城市</a></li>
+        </ul>
+    </header>
+
+    <div class="navigation">
+        <h1>
+            Hello<br>
+            welcome to travel
+        </h1>
+        <div class="buttom">
+            <a href="addCity.html">添加你喜欢的城市</a>
+        </div>
+    </div>
+    <!--method="get"配置是get还是post请求-->
+    <form action="/totalcity" method="get" style="float:left;width:60%;margin-left:65%;">
+        <input type="text" name="keyword" />
+        <input type="submit" value="查询你喜欢的城市" class="btn1"/>
+    </form>
+
+
+
+        <div>
+            <table class="allcity">
+                <tr class="line_city" th:each="city : ${cityList}">
+                    <td>
+                        <div class="city">
+                            <div class="mycity">
+                              <div>
+                                <a th:href="@{/citydetil(cname=${city.getCname()})}" style="font-size: 20px;" th:text="${city.getCname()}"></a>
+                              </div>
+                              <div class="borderbotm"></div>
+                              <p style="margin-top: 10px;" th:text="${city.getCin()}"></p>
+                              
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    <div style="width:60%;margin-left:37%;border:0px solid red;padding-top:4px;margin-bottom: 30px;" class="center">
+        <input type="button" value="首  页" class="btn" th:onclick="|jump(1)|"/>
+        <input type="button" value="上一页" class="btn" th:onclick="|jump(${(currentPage)-1})|" th:disabled="${currentPage==1}"/>
+        <input type="button" value="下一页" class="btn" th:onclick="|jump(${(currentPage)+1})|" th:disabled="${currentPage==totalPage}"/>
+        <input type="button" value="尾  页" class="btn" th:onclick="|jump(${totalPage})|"/>
+    </div>
+    <div style="padding-top: 3px;margin-left: 530px;margin-bottom: 100px;" class="center">
+        <span style="color: white;">总页数：</span>
+        <span th:text="${totalPage}" style="color: white"></span>
+        <span style="margin-left:15px;color: white;" >当前页数：</span>
+        <span th:text="${currentPage}" style="color: white"></span>
+    </div>
+
+
+
+        <footer>
+          <div class="introduceL">
+            <p class="intL1">站名：旅游攻略网站</p>
+            <p class="intL2">制作人：zxy</p>
+            <p class="intL3">联系电话:111111111</p>
+          </div>
+          <div class="introduceR">
+            <p class="intR1"><a href="first.html">城市介绍</a></p>
+            <p class="intR1"><a href="findcity.html">城市推荐</a></p>
+            <p class="intR1"><a href="totalcity.html">全部城市</a></p>
+           </div>
+        </footer>
+    
+</body>
+</html>

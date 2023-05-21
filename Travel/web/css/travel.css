@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+  /* 居中 */
+    display: flex;
+    justify-content: center; /* 居中排列 */
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    
+}
+.shell{
+    position: absolute;
+    width: 90%;
+    height: 300px;
+    display: flex;
+    margin: 0 auto;
+    top: 100px;
+}
+.mybox{
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.5);
+    border-radius: 20px;
+    border: 10px solid #fff;
+    background-color: #fff;
+}
+.mybox>img{
+    width: 200%;
+    height: 85%;
+    object-fit: cover;
+    transition: .5s;
+    
+}
+.mybox>span{
+    font: 200 25px '优设标题黑';
+    text-align: center;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mybox:hover{
+    flex-basis: 40%;
+}
+.mybox:hover>img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.start{
+font-size:25px;
+background-color:#497271;
+border-radius:10px;
+height:20px;
+line-height:20px;
+width:225px;
+text-align:center;
+margin:0 auto;
+padding:20px;
+box-shadow:rgba(0,0,0,0.5) 3px 3px 4px;
+position:relative;
+top: 200px;
+}
+.start a{
+/* 取消下划线 */
+text-decoration:none;
+color:#FFF;
+}

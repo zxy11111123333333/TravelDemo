@@ -1,0 +1,82 @@
+body{
+    width: 100%;
+    background-color:#02162b ;
+}
+.allcity{
+
+    width: 600px;
+    background-color: #02162b;
+    margin: 100px auto 100px;
+}
+
+
+
+.city{
+    margin-bottom: 50px;
+    border-radius: 12px;
+    background-color: #006699;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mycity{
+    flex: 0 0 80%;
+    min-height: 300px;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    color: #c0c0c7;
+    margin-left: 50px;
+}
+
+
+
+
+.navigation{
+    margin-top: 10rem;
+    margin-left: 100px;
+}
+.navigation h1 {
+    margin: 10px 0;
+    font-size: 3.8rem;
+    color: #fcfcfe;
+    text-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+}
+
+.borderbotm {
+    /* border-style: dashed; */
+    border-bottom: 1px dashed rgb(187, 185, 185);
+    height: 0px;
+    margin: 35px auto 35px;
+
+}
+
+.buttom {
+    display: inline-block;
+    height: 35px;
+    line-height: 28px;
+    padding: 0px 20px 0 20px;
+    border: 2px solid #ff8181;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform .3s ease;
+    position: relative;
+}
+.buttom a{
+    color: #ff8181;
+}
+
+.btn{
+    border:1px solid lightgray;
+    width:80px;
+    height:24px;
+}
+
+.btn1{
+    border:1px solid lightgray;
+    width:150px;
+    height:24px;
+
+}

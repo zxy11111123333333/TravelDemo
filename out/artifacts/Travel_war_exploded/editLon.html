@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/add.css">
+</head>
+<body>
+
+
+<div id="div_container">
+    <div id="div_city_list">
+        <p class="center f30">修改信息</p>
+
+        <form action="/editl" method="post">
+            <table class="mycity" th:object="${lon}">
+                <input style="margin-right: 200px;" type="text"  th:value="${lon.getCname()}" name="cname" hidden="true"/>
+                <tr>
+                    <th>景点名称：</th>
+                    <td><input style="margin-right: 200px;" th:value="${lon.getFname()}" type="text" name="lname" readonly unselectable="on"  /></td>
+                </tr>
+                <tr>
+                    <th>景点简介：</th>
+                    <td><input style="margin-right: 200px;" type="text" th:value="${lon.getFin()}" name="lin" /></td>
+                </tr>
+                <tr>
+                    <th>景点图片：</th>
+                    <td><input style="margin-right: 200px;" type="text" th:value="${lon.getFimg()}" name="limg" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="margin-left: 120px" class="btn" type="submit" value="修改" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

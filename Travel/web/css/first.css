@@ -1,0 +1,80 @@
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.block-content{
+	position: relative;
+    height: 200px;
+	
+}
+.info-content {
+    background-color: #497271;
+    margin: 25vh 15vh;
+    /*display: none*/
+    justify-content: space-around;
+    align-items: center;
+	position:absolute;
+	font-weight:1000px;
+}
+
+.block-content p {
+    margin: 25px 25px 25px 25px;
+}
+
+.text_communist {
+    color: white;
+    font-size: 40px;
+    margin-top: -20px;
+    position: relative;
+    top: -5px;
+	z-index:99;
+}
+
+.text_content {
+    color: #ccc;
+    font-size: 5px;
+    line-height: 2;
+	z-index:99;
+}
+
+p.line {
+    background-color: white;
+    height: 3px;
+    margin: 0 25px;
+    position: relative;
+    top: -5%;
+    width: 53%;
+}
+
+img.info-photo {
+    width: 300px;
+    height: 200px;
+    margin-left:830px;
+	margin-top:165px;
+	position:absolute;
+	/* z-index:6; */
+}
+
+.block-content{
+	position: relative;
+    height: 480px;
+	background-color: #02162b;
+}
+.info-content {
+	width: 85%;
+    background-color: #497271;
+    margin: 20vh 15vh;
+    /*display: none*/
+    justify-content: space-around;
+    align-items: center;
+	position:absolute;
+}
+
+
+
+
+
+
+
+

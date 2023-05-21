@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- spring扫描org.yqz.controller下面所有带注解的类 -->
+    <!--扫描包路径-->
+    <context:component-scan base-package="com.zxy.controller"/>
+
+    <!--
+            这个标签表示使用注解来驱动
+            自动加载RequestMappingHandlerMapping和RequestMappingHandlerAdapter，
+            1、注解处理器：对类中标记@ResquestMapping的方法进行映射，根据ResquestMapping定义的url匹配
+            ResquestMapping标记的方法，匹配成功返回HandlerMethod对象给前端控制器，
+            HandlerMethod对象中封装url对应的方法Method
+            2、注解适配器：对标记@ResquestMapping的方法进行适配。
+    -->
+    <mvc:annotation-driven/>
+    <!-- 当在web.xml 中 DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
+    <mvc:default-servlet-handler/>
+
+    <!--thymeleaf模板解析器-->
+    <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <!--前缀配置-->
+        <property name="prefix" value="/"></property>
+        <!--后缀配置-->
+        <property name="suffix" value=".html"></property>
+        <!--模板类型-->
+        <property name="templateMode" value="HTML"></property>
+        <!--不使用缓存-->
+        <property name="cacheable" value="false"></property>
+        <!--编码类型-->
+        <property name="characterEncoding" value="UTF-8"></property>
+    </bean>
+
+    <!--模板引擎配置-->
+    <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"></property>
+    </bean>
+    <!--视图处理器-->
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"></property>
+        <property name="characterEncoding" value="UTF-8"></property>
+    </bean>
+
+</beans>

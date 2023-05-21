@@ -1,0 +1,90 @@
+body{
+    background-color:#02162b ;
+}
+
+     /* 顶部导航 */
+.navigation .titleBox-tag {
+    text-transform: uppercase;
+  }
+  
+  .navigation h1 {
+    margin: 100px 60px 100px;
+    font-size: 3.8rem;
+    color: #fcfcfe;
+    text-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+  }
+
+  /* 小标题 */
+  .navigation2 .titleBox-tag {
+    text-transform: uppercase;
+  }
+  
+  .navigation2 h1 {
+    margin: 10px 110px 50px;
+    font-size: 2.0rem;
+    color: #fcfcfe;
+    text-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+  }
+  /* 虚线 */
+  .borderbotm {
+    /* border-style: dashed; */
+    border-bottom: 2px dashed rgb(187, 185, 185);
+    height: 0px;
+    margin: 35px auto;
+    width: 80%;
+    
+  }
+
+
+.allfood{
+  margin: 100px auto 300px;
+}
+
+
+
+.myfood{
+  width: 700px;
+  background-color: #00283A;
+  flex: 0 0 80%;
+  min-height: 300px;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  color: aliceblue;
+  margin-bottom: 50px;
+}
+
+  .alltran{
+    width: 40%;
+    margin-bottom: 200px;
+    margin-left: 100px;
+}
+
+.buttom {
+  display: inline-block;
+  height: 35px;
+  line-height: 28px;
+  padding: 0px 20px 0 20px;
+  border: 2px solid #ff8181;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform .3s ease;
+  position: relative;
+}
+.buttom a{
+  color: #ff8181;
+}
+  
+  .mytran{
+
+    background-color: #00283A;
+    flex: 0 0 80%;
+
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    color: aliceblue;
+    margin: 30px auto;
+  }

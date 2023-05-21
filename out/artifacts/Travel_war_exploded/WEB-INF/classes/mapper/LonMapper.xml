@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离-->
+<mapper namespace="com.zxy.mapper.LonMapper">
+
+    <!--需求：通过id查询用户表的记录-->
+    <!--
+        1.标识映射文件中的sql，将sql语句封装到mapped statement对象中，所以称为statement的id
+        2.parameterType：指定输入参数类型
+        3.#{}：表示一个占位符
+        4.#{id}：其中的id表示接收的输入参数，参数名称就是id，如果输入参数是简单类型，#{}中的参数名可以任意，可以为value或者其他
+        5.resultType：指定sql输出结果的所映射的java对象类型，select指定resultType表示将单条记录映射成的java对象
+    -->
+    <!--    执行查询用select标签，更新用update标签-->
+    <!--    parameterType:参数类型 java.lang.Long为长整形-->
+    <!--    resultType:返回值类型 这里返回结果为Fruit对象-->
+
+    <select id="getAllLon" parameterType="java.lang.String" resultType="com.zxy.entity.CityLon">
+        SELECT * FROM city_lon where Cname=#{Cname}
+    </select>
+
+    <select id="insertLon" parameterType="com.zxy.entity.CityLon">
+        insert into city_lon(Cname,Lname,Lin,Limg) values (#{Cname},#{Lname},#{Lin},#{Limg})
+    </select>
+
+    <select id="getLonByLname" parameterType="java.lang.String" resultType="com.zxy.entity.CityLon">
+        SELECT * FROM city_lon WHERE Lname = #{Lname}
+    </select>
+
+    <update id="updateLon" parameterType="com.zxy.entity.CityLon">
+        update city_lon set Cname=#{Cname},Lin=#{Lin},Limg=#{Limg} where Lname=#{Lname}
+    </update>
+    <delete id="deleteLon" parameterType="java.lang.String">
+        delete from city_lon where Lno = #{Lno}
+    </delete>
+
+
+</mapper>
